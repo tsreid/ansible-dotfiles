@@ -1,2 +1,2 @@
 # dotfiles
-# notes go here
+notes go here
