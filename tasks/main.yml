@@ -1,2 +1,11 @@
 ---
 # tasks file for dotfiles
+- copy:
+    src: "{{ item }}"
+    dest: "{{ dotfiles_home}}/.{{ item }}"
+    mode: 0644
+    backup: yes
+  with_items:
+    - "{{ dotfiles_local }}"
+
+    
