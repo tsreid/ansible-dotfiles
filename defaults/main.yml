@@ -6,4 +6,6 @@ dotfiles_local:
   - vimrc
   - bash_profile
   - bashrc
+  - inputrc
+  - aliases
   
