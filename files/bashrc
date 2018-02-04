@@ -1,5 +1,13 @@
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+
+
 function _update_ps1() {
-   export PS1="$(powerline-shell-go bash $? 2> /dev/null)"
+  if [ -x "$(command -v powerline-shell-go)" ] ; then
+    export PS1="$(powerline-shell-go bash $? 2> /dev/null)"
+  else
+    export PS1=PS1="\t \u@\h:\W>\[$(tput sgr0)\]"
  }
 
  export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
