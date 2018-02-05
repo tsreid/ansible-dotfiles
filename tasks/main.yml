@@ -6,6 +6,13 @@
     mode: 0644
     backup: yes
   with_items:
-    - "{{ dotfiles_local }}"
+    - "{{ dotfiles_files_local }}"
 
+# ensure directories exist
+- file:
+    path: "{{ dotfiles_home}}/{{ item }}"
+    state: directory
+    mode: 0755
+  with_items:
+    - "{{ dotfiles_dirs_local }}"
     
