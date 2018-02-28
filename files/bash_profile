@@ -1,30 +1,4 @@
-# Setup colors 
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
-
-# setup go path 
-export GOPATH=$HOME/code/go
-
-# Setup path
-export PATH=$HOME/bin:$GOPATH/bin:$PATH
-
-# Setup prompt, check if go bin is available, fall back to default prompt
-function _update_ps1() {
-  if [ -x "$(command -v powerline-shell-go)" ] ; then
-    export PS1="$(powerline-shell-go bash $? 2> /dev/null)"
-  else
-    export PS1="\t \u@\h:\W>\[$(tput sgr0)\] "
-  fi
-}
-
-export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-
-# Include aliases 
-if [ -f ~/.aliases ]; then
-   source ~/.aliases
-fi
-
-# Include bashrc
+# Let bashrc handle everything
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
