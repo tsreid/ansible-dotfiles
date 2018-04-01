@@ -11,7 +11,7 @@ export PATH=$HOME/bin:$GOPATH/bin:$PATH
 # Setup prompt, check if go bin is available, fall back to default prompt
 function _update_ps1() {
   if [ -x "$(command -v powerline-shell-go)" ] ; then
-    export PS1="$(powerline-shell-go bash $? 2> /dev/null)"
+     PS1="$(powerline-go -error $?)"
   else
     export PS1="\t \u@\h:\W>\[$(tput sgr0)\] "
   fi
